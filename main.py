@@ -3,18 +3,20 @@ import dataGathering as dg
 from graduate import Grad
 
 print "Begin\n"
-preferences = ["Dev", "BA" , "Infrastructure"]
+preferences = ["a", "b" , "c"]
 graduates = dg.collectNames()
 gradObj = {};
 
 for grad in graduates:
     gradObj[grad] = Grad(grad)
 
-gradObj = dg.setRank(gradObj)
-gradObj = dg.setPreferences(gradObj)
+#gradObj = dg.setRank(gradObj)
+gradObj = dg.setPreferences(gradObj,preferences)
 
-print gradObj["matt"].pref1
-print str(gradObj["matt"].rank)
+
+dg.assignGrads(graduates, gradObj, preferences)
+
+
 
 
 
